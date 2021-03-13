@@ -5,16 +5,14 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.huayu.pojo.User;
 import com.huayu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 @RestController
 @RequestMapping("user")
+@CrossOrigin
 public class UserController {
     @Autowired
     private UserService userService;
@@ -29,6 +27,16 @@ public class UserController {
     }
 
     /**
+     * 根据ID查询user表
+     * @param id
+     * @return
+     */
+    @RequestMapping("/queryUserById/{id}")
+    public User queryUserById(@PathVariable Integer id){
+        return userService.getById(id);
+    }
+
+    /**
      * 添加
      * @RequestBody主要用来接收前端传递给后端的json字符串中的数据的(请求体中的数据的)
      * @param user
@@ -36,6 +44,7 @@ public class UserController {
      */
     @RequestMapping("/addUser")
     public boolean addUser(@RequestBody  User user){
+        System.out.println("哈哈哈哈哈哈哈"+user);
         return userService.save(user);
     }
 

@@ -15,5 +15,6 @@ public class User {
     @TableId(value = "uid",type = IdType.AUTO)
     private Integer uid;
     private String userName;
-    private String passWorld;
+    private String passWord;
+    private Integer type;
 }
