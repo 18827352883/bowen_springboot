@@ -15,7 +15,7 @@ public class SupplierServiceImpl extends ServiceImpl<SupplierMapper, Supplier> i
     private SupplierMapper supplierMapper;
 
     @Override
-    public List<Supplier> queryAllSupplier() {
-        return supplierMapper.queryAllSupplier();
+    public List<Supplier> queryAllSupplier(String name,String phone) {
+        return supplierMapper.queryAllSupplier(name,phone);
     }
 }

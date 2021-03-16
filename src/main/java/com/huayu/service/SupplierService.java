@@ -6,5 +6,5 @@ import com.huayu.pojo.Supplier;
 import java.util.List;
 
 public interface SupplierService extends IService<Supplier> {
-    List<Supplier> queryAllSupplier();
+    List<Supplier> queryAllSupplier(String name,String phone);
 }
