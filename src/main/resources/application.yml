@@ -1,13 +1,15 @@
 server:
   port: 8888
+#  数据库连接配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/bowen?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:3306/bowen?serverTimezone=GMT%2B8
     username: root
     password: root
 mybatis-plus:
   type-aliases-package: com.huayu.pojo
   configuration:
     map-underscore-to-camel-case: true
+    #配置日志
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
